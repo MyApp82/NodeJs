@@ -1,0 +1,1 @@
+SELECT customers.customerName FROM orders INNER JOIN orderdetails ON orders.orderNumber = orderdetails.orderNumber LEFT JOIN customers ON orders.customerNumber = customers.customerNumber LEFT JOIN products ON products.productCode = orderdetails.productCode WHERE products.productLine = "Classic Cars" GROUP BY customers.customerName HAVING COUNT(customers.customerName) > 23;
